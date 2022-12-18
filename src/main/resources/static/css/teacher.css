@@ -1,0 +1,51 @@
+    .teacher{
+      margin-top:100px;
+    }
+body{
+ background-color: 	#d3d3d3;
+}
+    .newTeacher{
+      margin-bottom:40px;
+      border: 1px solid black;
+    }
+
+    .newTeacher{
+      -webkit-transition: background-color 2s ease-out;
+      -moz-transition: background-color 2s ease-out;
+      -o-transition: background-color 2s ease-out;
+      transition: background-color 2s ease-out;
+      -webkit-transition: color 2s ease-out;
+      -moz-transition: color 2s ease-out;
+      -o-transition: color 2s ease-out;
+      transition: color 2s ease-out;
+    }
+
+    .newTeacher a{
+      text-decoration:none !important;
+      cursor:pointer;
+    }
+
+    .newTeacher:hover{
+      background-color: hsl(206deg 100% 52%);
+      color:red;
+      cursor:pointer;
+    }
+
+    .tableTitle h2{
+      font-size:3.5rem !important;
+      margin-bottom:30px;
+     }
+
+     .description p{
+       margin-bottom:30px;
+     }
+
+     td a{
+       font-weight:bold;
+       text-decoration:none !important;
+     }
+
+     .newTeacher a{
+       display:block;
+       width:100%;
+       }
