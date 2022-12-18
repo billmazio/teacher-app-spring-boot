@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Teachers Table</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link th:href="@{/css/teacher.css}" href="/css/teacher.css" rel="stylesheet" type="text/css" />
+
+<!--  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />-->
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<!--        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="-->
+<!--        crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+  <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid text-center teachersTable">
+  <div class="tableTitle"><h2>TEACHERS TABLE</h2></div>
+  <div class="row" style="justify-content:center;">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <div class="description"><p>Here are your current teachers on the database. You can delete a teacher and can also add a new teacher.
+        In case of any mistake according to the data of the teacher, you can press the button Update.</p></div>
+      <div></div>
+        <div class="newTeacher" style="padding:20px;"><a class="h4" href= "/teacher/new">Add A New Teacher +</a></div>
+
+
+      <form th:action="@{/allTeachers}">
+
+              <input type="text" name="lastName" th:value="${lastName}"  placeholder="Find by Surname" size="50" >
+              <button type="submit" class="btn btn-primary m-2">Search</button>
+              <button id="btnClear" class="btn btn-primary">Clear</button>
+      </form>
+
+    <div th:if="${teacherList.size() > 0}">
+
+      <table class="table table-hover table-responsive-xl">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+
+
+      <div th:if="${message != null}" class="alert alert-success alert-dismissible fade show text-center message"
+           role="alert">
+        [[${message}]]
+        <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+        <tbody>
+      <div th:if="${teacherList.size()>0}">
+      <tr th:each="teacher : ${teacherList}"th:field="${teacher}">
+        <th scope="row">[[${teacher.id}]]</th>
+        <td>[[${teacher.firstName}]]</td>
+        <td>[[${teacher.lastName}]]</td>
+
+        <td>
+          <a th:if="${teacher.lastName == true}" class="fa-regular fa-square-check"
+             th:href="@{'/teacherList/' + ${teacher.id} + '/lastName/false'}" title="Disable this teacher"></a>
+          <a th:if="${teacher.lastName == false}" class="fa-regular fa-square icon-dark"
+             th:href="@{'/teacherList/' + ${teacher.id} + '/lastName/true'}" title="Enable this teacher"></a>
+          <a th:href="@{/edit/{id}(id = ${teacher.id})}"title="Edit this teacher" class="fa-regular fa-pen-to-square icon-dark" >Update</a>
+          <a th:href="@{/delete/{id}(id = ${teacher.id})}" title="Delete this teacher" class="fa-regular fa-trash-can icon-dark btn-delete">Delete</a>
+        </td>
+
+      </tr>
+      </div>
+
+        </tbody>
+    </table>
+    </div>
+
+    </div>
+  <div class="" th:unless="${teacherList.size()>0}">
+    <span>No Teachers found!</span>
+  </div>
+
+</div>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    // ...
+
+    $("#btnClear").on("click", function (e) {
+      e.preventDefault();
+      $("#lastName").text("");
+      window.location = "[[@{/allTeachers}]]";
+    });
+  });
+</script>
+</div>
+</body>
+</html>
