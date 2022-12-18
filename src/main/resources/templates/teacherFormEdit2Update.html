@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/webform.css}" href="/css/webform.css" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Teacher Form</title>
+</head>
+
+<script type="text/javascript" src="/js/form.js"></script>
+
+<form th:action="@{/update/{id}(id = ${teacher.id})}" method="post" th:object="${teacher}">
+
+    <div class="container-fluid text-center teacherForm">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12">
+                <form>
+                    <h1>Teachers Form</h1>
+                    <div class="text-center">
+                        <div class="col-lg-6 col-12">
+                            <label>
+                                <span>Teacher Firstname</span><input  type="text" id="firstname" th:field="*{firstName}" name="first_name">
+                            </label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="text-center">
+                        <div class="col-lg-6 col-12">
+                            <label>
+                                <span>Teacher Surname</span><input  type="text" id="surname" th:field="*{lastName}"   name="last_name">
+
+                            </label>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="message">
+                        <div class="col-lg-12 col-12">
+                            <label class="message_btn_wrapper">
+                                <input type="submit" value="Submit Form" >
+                            </label>
+                           
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+            </div>
+        </div>
+    </div>
+</form>
