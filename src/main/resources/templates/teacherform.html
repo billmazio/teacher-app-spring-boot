@@ -1,0 +1,78 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/webform.css}" href="/css/webform.css" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <title>Teacher Form</title>
+
+</head>
+<body>
+
+<form th:action="@{/teacher/save}" method="post" th:object="${teacher}">
+
+
+    <div class="container-fluid text-center teacherForm">
+
+        <div class="container">
+            <div class="row"></div>
+            <h1 class="text-grey">Teacher Form</h1>
+
+            <form>
+                <div class="text-center">
+                    <div class="col-lg-6 col-12">
+                        <label>
+                            <span>Teacher Firstname</span><input type="text" id="firstname"  th:field="*{firstName}" name="first_name">
+                        </label>
+                    </div>
+
+
+                </div>
+
+                <div class="text-center">
+                    <div class="col-lg-6 col-12">
+                        <label>
+                            <span>Teacher Surname</span><input type="text" id="surname"  th:field="*{lastName}" name="last_name">
+
+                        </label>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="submit" value="Save" class="btn btn-primary btn-sm mr-2" />
+
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+        <div>
+            <input type="button" value="Cancel" id="btnCancel" class="btn btn-secondary btn-sm  mr-2" />
+
+        </div>
+
+    </div>
+
+
+
+</form>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#btnCancel").on("click", function () {
+      window.location = "[[@{/allTeachers}]]";
+    });
+  });
+</script>
+
+</body>
+</html>
