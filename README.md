@@ -11,7 +11,6 @@ This is a project developed using the following technologies:
 - Maven
 - Thymeleaf
 - CSS with Bootstrap
-- JavaScript
 
 ## Screenshots
 
