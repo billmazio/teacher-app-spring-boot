@@ -42,6 +42,9 @@ This is a project developed using the following technologies:
 ### Teacher Update Form
 
 ![Screenshot 5](https://user-images.githubusercontent.com/116730698/230724214-4ec9f1c3-8222-4aa7-bcb5-104e736dc233.png)
+![Screenshot 6](https://user-images.githubusercontent.com/116730698/230724218-46aad624-ee1d-4496-b9dc-0a032a539050.png)
+
+- Provides a form for updating teacher information.
 
 ### Teacher Search
 
@@ -51,9 +54,7 @@ This is a project developed using the following technologies:
 - Demonstrates search functionality where a single letter finds teachers.
 
 
-![Screenshot 6](https://user-images.githubusercontent.com/116730698/230724218-46aad624-ee1d-4496-b9dc-0a032a539050.png)
 
-- Provides a form for updating teacher information.
 
 ### Teacher Details
 
