@@ -59,7 +59,7 @@ This is a project developed using the following technologies:
 
 ### Single Letter Search
 
-![Screenshot 9](https://user-images.githubusercontent.com/116730698/230724227-148cc71b-9e73-4e0a-a211-f0375019e03c.png)
+
 
 - Demonstrates search functionality where a single letter finds teachers.
 
