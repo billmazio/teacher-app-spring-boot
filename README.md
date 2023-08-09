@@ -48,7 +48,7 @@ This is a project developed using the following technologies:
 ![Screenshot 7](https://user-images.githubusercontent.com/116730698/230724220-3c888581-6f0f-4ad2-9b21-0f6ba36ce383.png)
 
 - Offers a search button to find teachers by last name.
-
+- Demonstrates search functionality where a single letter finds teachers.
 
 
 ![Screenshot 6](https://user-images.githubusercontent.com/116730698/230724218-46aad624-ee1d-4496-b9dc-0a032a539050.png)
@@ -59,11 +59,11 @@ This is a project developed using the following technologies:
 
 ![Screenshot 8](https://user-images.githubusercontent.com/116730698/230724225-db34947d-0ed0-464c-93dd-de382be05472.png)
 
-- Shows detailed information about a selected teacher.
-
-### Single Letter Search
+- Shows detailed information about a deleted teacher.
 
 
 
-- Demonstrates search functionality where a single letter finds teachers.
+
+
+
 
